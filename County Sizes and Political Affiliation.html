@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>County Sizes and Political Affiliations</title>
+
+    </head>
+    <body>
+    <h1> Virginia 2024 Election Results: Comparing County Sizes and Percentage of Democratic and Republican Voters</h1>
+    <h2> Jessica Skolnick and Ela Sobol </h2>
+    <br>
+    <p>
+        <b>Initial Research Question:</b>
+        <br>
+        For this project, we have decided on the topic of county sizes and how they relate to the political standings of that county of Virginia. 
+        Specifically, we chose to focus on the 2024 Presidential election, because it was a close elction in Virginia. 
+        <br>
+        <br>
+        We hypothesized that counties with <b>smaller population sizes</b>
+        in Virginia would have a larger percentage of <span style="color: red;">Republican</span> voters and that counties 
+        with <b>larger population sizes</b> would have a larger percentage of <span style="color: blue;">Democratic</span> voters.
+        <br>
+        <br>
+        <b>The Data Used:</b>
+        <br>
+        For our data, we used a dataset from the Virginia Department of Elections which shows the number of votes cast for each presidential candidate
+        in the 2024 Presidential election. We then took a dataset from the United States Census Bureau that detailed Virginia Counties 
+        and their respective population sizes. We used this additional information to add a column to the original election results dataset. 
+        In order to combine the datasets, we had to alphabetize, change data types, and clean up our data.
+        <br>
+        <br>
+        <b>Steps Taken in Analysis and Visualization:</b>
+        <br>
+        Throughout this project our main goals were to use all the tools we have learned throughout the class to accurately represent our data.
+         First we used Python, in which we created interactive scatterplots with plotly. Our main goal within these visualizations was to 
+         directly correlate the two variables we were looking into (population size and political voting affiliations). This would allow us to see 
+         if there was a correlation between them or if it felt more randomly distributed. Through having a tooltip, focusing on colors, and creating 
+         clear labels these scatterplots allowed us to start to flesh out our hypothesis, but led us to want to create more in depth plots. 
+         This leads us to our violin plot. Wanting to create a visualization that we had not previously learned about, we had put in our two 
+         variables into ChatGPT and asked what visualizations could be useful (just like how we did in our last class). We learned about what a 
+         violin plot shows and after looking into how to create this through Python, we took the steps to split our population column into three parts. 
+         The density charts show how these population sizes correlate to each other, and to the percentage of voter affiliations. After, we decided to 
+         work on Tableau to create a bubble chart and a choropleth map of Virginia. Both using the diverging gradient of blue (Democratic) to red (Republican), 
+         these charts gave viewers another way to see how the populations affect the voting percentages. The sizes within this bubble chart gives viewers a 
+         direct understanding of which counties have the greatest populations, and through seeing that most of these are blue in color, they can see the 
+         evidence for our hypothesis. Knowing that the data is focused on Virginia counties, using a choropleth map allows one to see where the counties 
+         are located and how they voted. This visual is useful as it shows truly how this data is rooted in real world events and results. 
+         We then took all of these visualizations and created an html website. This allowed us to truly combine everything we had learned throughout 
+         the class to create a comprehensive view of the information and what it means. 
+    </p>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<div style="display: inline-flex; flex-direction: column; margin-right: 20px; vertical-align: top;">
+    <h2>County Size and Democratic Voting Percentage Scatterplot</h2>
+    <iframe src="election project/Dem_Full_scatterplot.html" style="width:1000px; height:750px; border:none;"></iframe>
+</div>
+
+<div style="display: inline-flex; flex-direction: column; vertical-align: top;">
+    <h2>County Size and Republican Voting Percentage Scatterplot</h2>
+    <iframe src="election project/Rep_Full_scatterplot.html" style="width:1000px; height:750px; border:none;"></iframe>
+</div>
+
+<br>
+<br>
+<p>
+These two interactive scatterplots show the population of the Virginia counties (x axis) compared to the Democratic voting percentage 
+in that county and the Republican voting percentage (y axis) in that county. Using the political parties colors of blue for Democrat, 
+and red for Republican these charts have a tooltip which allows the viewer to see the county name, population, and percentage of voters 
+in a specific party. Through looking at the plots one can see that there are many more counties with smaller population sizes as there is 
+a large cluster of points near the smaller end of the x axis. However you can also start to see a pattern. This is that as the population 
+size increases, the Democratic percentage increases and there seems to be an upward trend. On the other hand, when looking at the 
+Republican scatterplot, the pattern is that as the population size increases the Republican percentage decreases creating a downward trend. 
+We wanted to see if these patterns that were emerging were more distinguishable when we got rid of the outlier of Fairfax County, the 
+largest county in Virginia. This brings us to our next two scatterplots.
+</p>
+<br>
+<br>
+<div style="display: inline-flex; flex-direction: column; margin-right: 20px; vertical-align: top;">
+    <h2>Democratic Trendline Scatterplot (Excluding Outlier)</h2>
+    <iframe src="election project/Dem_Trend_scatterplot.html" style="width:1000px; height:750px; border:none;"></iframe>
+</div>
+
+<div style="display: inline-flex; flex-direction: column; vertical-align: top;">
+    <h2>Republican Trendline Scatterplot (Excluding Outlier)</h2>
+    <iframe src="election project/Rep_Trend_scatterplot.html" style="width:1000px; height:750px; border:none;"></iframe>
+</div>
+
+
+<br>
+<br>
+<p>
+These interactive scatterplots use the same information as before, but without the outlier of Fairfax County. 
+The patterns of the upward trend in the Democratic scatterplot and the downward trends in the Republican scatterplot are clearer 
+with the addition of the trendline. These trendlines directly support our hypothesis, as they show that smaller counties seem to have 
+larger Republican voters and bigger counties seem to have larger Democratic voters. 
+</p>
+
+<br>
+<br>
+
+<img src="election project/violin.png" style="display:block; margin:0 auto;" alt="image">
+
+<br>
+<br>
+<p>
+    This is a violin plot, which shows the density of Democratic voters in each county of Virginia. 
+    After finding the points of which one third of the data for the population lies above and below, we separated the population
+     into three groups. These groups are small, medium, and large. Using this new plot, we were able to see how the densities of the 
+     Democratic percentages were smaller in the smaller counties and grew to the higher ends as the populations were larger. 
+     These visual representations of the variation and densities of these percentages gives viewers a greater understanding of 
+     what is taking place. Each of these density violins show the mean as well within the third of the data they are talking about, 
+     and viewers see how this mean grows as the population grows. This all supports our hypothesis, and creates a more 
+     well rounded view of our data for the 2024 Presidential Election results for Virginia. 
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='tableauPlaceholder' id='viz1765243737334'
+     style='position: relative; width:100%; max-width:1400px; margin:0 auto;'>
+  <noscript>
+    <a href='#'>
+      <img alt='Dashboard 1'
+           src='https://public.tableau.com/static/images/El/ElectionVisualizationProject/Dashboard1/1_rss.png'
+           style='border: none' />
+    </a>
+  </noscript>
+
+  <object class='tableauViz' style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+    <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' />
+    <param name='name' value='ElectionVisualizationProject/Dashboard1' />
+    <param name='tabs' value='no' />
+    <param name='toolbar' value='yes' />
+    <param name='static_image'
+           value='https://public.tableau.com/static/images/El/ElectionVisualizationProject/Dashboard1/1.png' />
+    <param name='animate_transition' value='yes' />
+    <param name='display_static_image' value='yes' />
+    <param name='display_spinner' value='yes' />
+    <param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' />
+    <param name='language' value='en-US' />
+    <param name='filter' value='publish=yes' />
+  </object>
+</div>
+
+<script type='text/javascript'>
+  var divElement = document.getElementById('viz1765243737334');
+  var vizElement = divElement.getElementsByTagName('object')[0];
+
+  // responsive sizing
+  if (divElement.offsetWidth > 800) {
+      vizElement.style.width = '100%';
+      vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+  } else if (divElement.offsetWidth > 500) {
+      vizElement.style.width = '100%';
+      vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+  } else {
+      vizElement.style.width = '100%';
+      vizElement.style.height = '727px';
+  }
+
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<p>
+    This dashboard contains two Tableau-created visualizations. The first is a bubble chart comparing the 
+    population sizes of Virginia counties and the percentage of voters for both political parties. The color is a
+    diverging red to blue gradient that represents the percent of voters that voted for the Democratic candidate 
+    in each county. Because of the nature of elections, the lower the percentage of Democratic voters, 
+    the higher percentage of Republican voters, so both variables are included and represented by their political party's official color.
+    The higher the percentage, the darker the blue hue, and the lower the percentage, the darker the red hue.
+    Percentage values closer to 50% are light hues. The size of each bubble is dictated by the relative population size of each county.
+    The tooltip shows the county name, the population size, the percent of Democratic voters, and the percent 
+    of Republican voters. The visualization shows that the largest circles, and therefore the Virginia counties with 
+    the highest populations, tend to have a high percentage of Democratic voters. On the other hand, the smaller circles,
+    which represent Virginia counties with smaller populations, tend to have a low percentage of Democratic voters
+    (and therefore a high percentage of Republican voters). This isn't true for every data point, but there is a visible pattern to viewers that
+    is aided by the choice of visualization being a bubble chart. This supports our original hypothesis.
+    <br>
+    <br>
+    The second visualization is a filled chloropleth map of Virginia counties. Again, the color is a diverging red to
+    blue gradient that represents the percent of voters that voted for the Democratic candidate. The more blue a county is,
+    the higher the percentage of Democratic voters. The more red a county is, the higher the percentage of Republican voters.
+    The tooltip shows the county name, the population size, the percent of Democratic voters, and the percent 
+    of Republican voters. Since this visualization doesn't have a physical representation of county size, this is mostly
+    to put the data we obtained from our datasets into their geographical context. As seen in the visualization, 
+    the counties in the western counties tend to be darkest red hues, meaning that they have a high percentage of voters who voted
+    for the Republican candidate. Counties that have blue hues, and therefore a majority of Democratic voters, tend to be located
+    in the northeast and southeast of Virginia. 
+    <br>
+    <br>
+    It is interesting to put this visualization next to the bubble chart, because they represent the data so differently. 
+    The bubble chart, which is covered largely by the largest blue bubbles, may make it appear as though there was a Democratic majority in 
+    Virginia. The map, on the other hand, shows a state that appears to be majority red, and therefore a majority Republican. That is true, 
+    but it doesn't show the full story about the high populations of certain "blue" counties. Overall, it is best to have both visualizations
+    together to get the full story. 
+
+
+</p>
+
+
+
+
+
+
+</html>
